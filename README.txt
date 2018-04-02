@@ -1,1 +1,1 @@
-git push
+需要cocosCreator编辑器，拖入即可运行
