@@ -9,30 +9,22 @@
   "wrapMode": 1,
   "curveData": {
     "props": {
-      "position": [
+      "y": [
         {
           "frame": 0,
-          "value": [
-            228,
-            331
-          ]
+          "value": 475
+        },
+        {
+          "frame": 0.16666666666666666,
+          "value": 331
+        },
+        {
+          "frame": 0.3333333333333333,
+          "value": 375
         },
         {
           "frame": 0.5,
-          "value": [
-            228,
-            500
-          ]
-        }
-      ],
-      "opacity": [
-        {
-          "frame": 0,
-          "value": 255
-        },
-        {
-          "frame": 0.5,
-          "value": 0
+          "value": 331
         }
       ]
     }

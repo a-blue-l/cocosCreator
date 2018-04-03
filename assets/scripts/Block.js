@@ -45,7 +45,8 @@ cc.Class({
                 nearAnchor = anchorList[i];//更改目前最近节点
             }
         }
-        if(cc.pDistance(nearAnchor.position, localPos)<=50) {
+        
+        if(cc.pDistance(nearAnchor.position, localPos)<=60) {
             return nearAnchor.parent.convertToWorldSpaceAR(nearAnchor.position);
         }else{
             return null;

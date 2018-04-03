@@ -35,6 +35,7 @@ cc.Class({
         // 加载第一个方块  根据位置
         let blockNode = cc.instantiate(this.blockList);
         this.blockLayer.addChild(blockNode);
+        blockNode.opacity = 255;
         var block = blockNode.getComponent('Block');
         blockNode.position = this.blockLayer.parent.convertToNodeSpaceAR(this.leftOrgin);
         
@@ -60,8 +61,17 @@ cc.Class({
             block.x = this.nextBlock.node.x - achdis;
             block.y = this.nextBlock.node.y + achdis*this.tan;
         }
+        var action = cc.sequence(
+            cc.moveTo(0.1, block.x, block.y+50),
+            cc.moveTo(0.1, block.x, block.y),
+            cc.moveTo(0.1, block.x, block.y+20),
+            cc.moveTo(0.1, block.x, block.y)
+        );
+        block.runAction(action);
+        block.opacity = 255;
         this.currBlock = this.nextBlock;
         this.nextBlock = blockNo;
+
         // 层级是反的。。。
         this.currBlock.node.zIndex = 1;
         this.nextBlock.node.zIndex = 0;

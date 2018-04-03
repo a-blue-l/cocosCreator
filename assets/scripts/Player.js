@@ -41,9 +41,11 @@ cc.Class({
             that.readyJump = false;//是否准备起跳
             that.speed = 0;
             that.jumpDistance = 0;
-            that.disence = Math.random()>0.5?1:-1;
             if(type === 0){
+                that.disence = Math.random()>0.5?1:-1;
                 that.node.parent.getComponent('stage').updateStage();
+            } else if(type === 1) {
+                that.node.parent.getComponent('stage').falg = true;
             }
             cb();
         })

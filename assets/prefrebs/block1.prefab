@@ -709,11 +709,11 @@
     },
     "_enabled": true,
     "_defaultClip": {
-      "__uuid__": "01a984c5-2f78-47f6-ad66-ef71e9009c25"
+      "__uuid__": "8acbba09-db27-4e2a-8b13-8af8354c1d52"
     },
     "_clips": [
       {
-        "__uuid__": "01a984c5-2f78-47f6-ad66-ef71e9009c25"
+        "__uuid__": "8acbba09-db27-4e2a-8b13-8af8354c1d52"
       }
     ],
     "playOnLoad": false

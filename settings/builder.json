@@ -26,7 +26,7 @@
   "webOrientation": "auto",
   "wechatgame": {
     "appid": "",
-    "orientation": "portrait"
+    "orientation": "landscape"
   },
   "xxteaKey": "ece2c334-adbb-48",
   "zipCompressJs": true

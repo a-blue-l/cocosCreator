@@ -535,7 +535,8 @@
     "currBlock": null,
     "nextBlock": null,
     "falg": true,
-    "falgs": null
+    "falgs": null,
+    "tan": 0.55
   },
   {
     "__type__": "cc.Animation",
@@ -545,14 +546,8 @@
       "__id__": 5
     },
     "_enabled": true,
-    "_defaultClip": {
-      "__uuid__": "b99e43b7-fd1c-40eb-8f48-a9758acc8e5c"
-    },
-    "_clips": [
-      {
-        "__uuid__": "b99e43b7-fd1c-40eb-8f48-a9758acc8e5c"
-      }
-    ],
+    "_defaultClip": null,
+    "_clips": [],
     "playOnLoad": true
   },
   {
