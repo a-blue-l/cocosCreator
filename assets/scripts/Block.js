@@ -17,6 +17,10 @@ cc.Class({
         centerAnchor: {
             default: null,
             type: cc.Node
+        },
+        scroe: {
+            default: null, 
+            type: cc.Label
         }
     },
 
@@ -46,7 +50,12 @@ cc.Class({
         }else{
             return null;
         }
-
+    },
+    scroeadd (scroe) {
+        // 分数增加
+        this.scroe.string = '+'+scroe;
+        this.scroe.node.opacity = 255;
+        this.scroe.getComponent(cc.Animation).play();
     }
     // update (dt) {},
 });

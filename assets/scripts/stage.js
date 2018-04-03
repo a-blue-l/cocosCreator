@@ -23,7 +23,8 @@ cc.Class({
         currBlock: null,
         nextBlock: null,
         falg: true,
-        falgs: null
+        falgs: null,
+        tan: 0.55
     },
 
     onLoad () {
@@ -53,12 +54,11 @@ cc.Class({
         let distance = this.player.getComponent('Player').disence;
         // 判断方向放置方块
         if(distance > 0){
-            // 0.55  反 tan 锐角 
             block.x = this.nextBlock.node.x + achdis;
-            block.y = this.nextBlock.node.y + achdis*0.55;
+            block.y = this.nextBlock.node.y + achdis*this.tan;
         } else {
             block.x = this.nextBlock.node.x - achdis;
-            block.y = this.nextBlock.node.y + achdis*0.55;
+            block.y = this.nextBlock.node.y + achdis*this.tan;
         }
         this.currBlock = this.nextBlock;
         this.nextBlock = blockNo;
@@ -83,9 +83,9 @@ cc.Class({
         this.falg = false;
         let jumpDistance = this.player.getComponent('Player').jumpDistance;
         let dir = this.player.getComponent('Player').disence;
-        //0.55 为 反  tan 锐角
+
         if(jumpDistance < 5){jumpDistance = 10;}
-        let targetPos = cc.p(this.player.x + jumpDistance*dir, this.player.y + jumpDistance*0.55);
+        let targetPos = cc.p(this.player.x + jumpDistance*dir, this.player.y + jumpDistance*this.tan);
         let targetWorldPos = this.player.parent.convertToWorldSpaceAR(targetPos);
         let formatPos = this.nextBlock.getComponent('Block').getAnchorLocation(targetWorldPos, dir);
         let formatPosThis = this.currBlock.getComponent('Block').getAnchorLocation(targetWorldPos, dir);
@@ -94,6 +94,8 @@ cc.Class({
             this.player.getComponent('Player').onJumpF(formatPos, ()=>{
                 this.scroe += 5;
                 cc.find('Canvas').getComponent('GameJs').scroe.string = 'scroe：' + this.scroe;
+                // 分数增加动画
+                this.nextBlock.getComponent('Block').scroeadd(5);
             },0);
         } else if(formatPosThis !== null) {
             this.player.getComponent('Player').onJumpF(targetWorldPos, ()=>{
@@ -122,6 +124,7 @@ cc.Class({
             that.addBlock();
             that.falg = true;
         });
+        
         let action = cc.sequence(cc.moveTo(0.5,cc.pSub(this.node.position,moveVector)) ,finished);
         this.node.runAction(action);
     },
